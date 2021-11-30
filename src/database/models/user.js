@@ -7,13 +7,13 @@ module.exports = (sequelize, DataTypes) => {
   
   }, { });
  
-  User.associate = function(models) {
-    // associations can be defined here
-    User.hasMany(models.Contact, {
-      foreignKey: 'userId',
-      as: 'contacts',
-      onDelete: 'CASCADE',
-    });
-  }
+  // User.associate = function(models) {
+  //   // associations can be defined here
+  //   User.hasMany(models.Contact, {
+  //     foreignKey: 'userId',
+  //     as: 'contacts',
+  //     onDelete: 'CASCADE',
+  //   });
+  // }
   return User;
 };

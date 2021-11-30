@@ -1,31 +1,44 @@
 'use strict';
-const {hashPassword}=require("../../utils/hash");
-module.exports = {
-  up: async (queryInterface, Sequelize) => {
-   
-   await queryInterface.bulkInsert(
-     "Users", [
-    {
-    name:'tytyne123',
-    email:'dusaflora2@gmail.com',
-    password: await hashPassword("tytyne1234"),
-    createdAt: new Date(),
-    updatedAt: new Date(),
-    },
-    {
-      name:'fimboo',
-      email:'fimbofinance@gmail.com',
-      password: await hashPassword("tytyne1234"),
-      createdAt: new Date(),
-      updatedAt: new Date(),
-      }
-  ], {});
-    
-  },
 
-  down: async (queryInterface, Sequelize) => {
-   
-      await queryInterface.bulkDelete("Users", null, {});
-     
-  }
+module.exports = {
+  up: async (queryInterface) => queryInterface.bulkInsert(
+    "Contacts",
+    [
+      {
+        firstname: "florentine",
+        lastname: "dusabeyezu",
+        email: "user1@example.com",
+        phone:"0781122334456",
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        firstname: "florentine2",
+        lastname: "dusabeyezu22",
+        email: "user13@example.com",
+        phone:"0781122334456",
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        firstname: "florentine3",
+        lastname: "dusabeyezu3",
+        email: "user3@example.com",
+        phone:"0781122334456",
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        firstname: "florentine2",
+        lastname: "dusabeyezu2",
+        email: "user2@example.com",
+        phone:"0781122334456",
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+    ],
+    {}
+  ),
+
+  down: (queryInterface) => queryInterface.bulkDelete("Contacts", null, {}),
 };

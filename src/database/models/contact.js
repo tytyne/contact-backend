@@ -4,17 +4,17 @@ module.exports = (sequelize, DataTypes) => {
     firstname: DataTypes.STRING,
     lastname: DataTypes.STRING,
     email: DataTypes.STRING,
-    phone:DataTypes.STRING,
-    userId: DataTypes.INTEGER
+    phone:DataTypes.STRING
+    // userId: DataTypes.INTEGER
   
   }, { });
-  Contact.associate = function(models) {
-  Contact.belongsTo(models.User, {
-    foreignKey: 'userId',
-    as: 'author',
-    onDelete: 'CASCADE',
-  })
-};
+//   Contact.associate = function(models) {
+//   Contact.belongsTo(models.User, {
+//     foreignKey: 'userId',
+//     as: 'author',
+//     onDelete: 'CASCADE',
+//   })
+// };
 
   return Contact;
 };
