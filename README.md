@@ -1,21 +1,83 @@
-![Coveralls github branch](https://img.shields.io/coveralls/github/atlp-rwanda/tech-strikers-bn-backend/Develop)
+[![Coverage Status](https://coveralls.io/repos/github/tytyne/contact-backend/badge.svg?branch=main)](https://coveralls.io/github/tytyne/contact-backend?branch=main)
+
 [![Reviewed by Hound](https://img.shields.io/badge/Reviewed_by-Hound-8E64B0.svg)](https://houndci.com)
 
-![Integration Tests CI](https://github.com/atlp-rwanda/tech-strikers-bn-backend/workflows/Integration%20Tests%20CI/badge.svg)
-[![deepcode](https://www.deepcode.ai/api/gh/badge?key=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwbGF0Zm9ybTEiOiJnaCIsIm93bmVyMSI6ImF0bHAtcndhbmRhIiwicmVwbzEiOiJ0ZWNoLXN0cmlrZXJzLWJuLWJhY2tlbmQiLCJpbmNsdWRlTGludCI6ZmFsc2UsImF1dGhvcklkIjoyNTI0MywiaWF0IjoxNjA2OTgzOTE2fQ.0tcQwDOsiXXGZIMTKONKpARhvCrVX6_UHgSdV25YWm0)](https://www.deepcode.ai/app/gh/atlp-rwanda/tech-strikers-bn-backend/_/dashboard?utm_content=gh%2Fatlp-rwanda%2Ftech-strikers-bn-backend)
+![Integration Tests CI](https://github/tytyne/contact-backend/workflows/Integration%20Tests%20CI/badge.svg)
 
-Barefoot Nomad - Making company travel and accommodation easy and convenient.
+Address book
 =======
 
-### Vision
-Make company global travel and accommodation easy and convenient for the strong workforce of savvy members of staff, by leveraging the modern web.
+## Description
+An application to help user to manage his contacts.
 
----
 
-### This application is hosted on heroku
-Application is accessible here [https://strikers2020.herokuapp.com]
+## Tools Used
+Javascript : Language used.
 
-### Barefoot Nomad documentation
-Our APIs is are documented with swagger tools.
+NodeJS : Javascript runtime.
 
-Documentations are here [https://strikers2020.herokuapp.com/]
+Express : NodeJs framework.
+
+Mocha, Chai and Supertest : Testing Framework.
+
+Airbnb : Javascript style Guide.
+
+Github CI : Continuous Integration.
+
+nyc : Test coverage.
+
+Coveralls : Git badge.
+
+Heroku : Deployment.
+
+Postman : Documentation
+
+### Getting Started
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+
+### Prerequisites to use of API
+Postman
+
+Any web browser
+
+### Prerequisites to get this API running on your local system
+
+1. Node js/express/postgres DB
+
+2. Any text editor(Preferrably VS Code)
+
+3. Git
+
+### Installation
+
+1. Clone this repository into your local machine:
+```bash
+ git clone https://github.com/tytyne/contact-backend
+```
+2. Install dependencies
+```bash
+- npm install
+```
+3. Start the application by running the start script
+```bash
+- npm run dev
+```
+4. Install postman to test all endpoints on port 4000.
+
+### Test
+
+run test using 'npm run test'.
+
+### Testing Framework
+Mocha - JavaScript Test Framework for API Tests
+
+
+## Built With
+NodeJs-EXPRESS: Node.js is a javascript runtime built on Chrome's V8 javascript engine.
+
+# Acknowledgement
+<ul>
+ <li> Jasiri</li>
+</ul>
+
+
