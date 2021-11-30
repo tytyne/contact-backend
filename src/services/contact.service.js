@@ -1,7 +1,11 @@
 import models from "../database/models/index"
 import "regenerator-runtime/runtime";
+
+const { Contact } = models;
+console.log("check the contact model",Contact)
+
 const { Op } = require("sequelize");
-const{Contact}=models
+
 /**
  * @description deals with contact 
  */
@@ -29,24 +33,19 @@ export default class ContactService{
         return contacts
 
     }
-    static async ContactById(id){
-        const contacts=await Contact.findOne(id)
-        return contacts
-
-    }
+   
+    static async getContactById(value) {
+       
+        return await Contact.findOne({ where: { id: value } });
+      }
     static async updateContact(updates,id){
-        const contacts= await Contact.update(updates,{where: { id:id }, returning: true })
-        return contacts
+       return await Contact.update(updates,{where: { id:id }, returning: true })
+        
 
     }
-    static async deleteContact(id){
-        const contacts= await Contact.delete({
-            where: { id:id },
-            returning: true,
-            plain: true,
-            })
-            await Contact.update(updates,{where: { id:id }, returning: true })
-        return contacts
+    static async deleteContact(value){
+        return await Contact.destroy({ where: {id: value } });
+        
 
     }
 }

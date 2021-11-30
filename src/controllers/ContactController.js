@@ -10,16 +10,7 @@ export default class ContactController{
             return next(new(Error(e)))
         }
     }
-    static async searchContact(req,res,next){
-        try{
-            const {contact}=req.query
-            const data= await ContactService.searchContact(contact)
-            res.status(200).json({message:"search a contact!!",data})
-        }
-        catch(e){
-            return next(new(Error(e)))
-        }
-    }
+ 
     static async PostContact(req,res,next){
         try{
             const formData = req.body;
@@ -30,19 +21,29 @@ export default class ContactController{
             return next(new(Error(e)))
         }
     }
-  
-   
-    static async updateContact(req,res,next){
+    static async searchContact(req,res,next){
         try{
-            const {contactId}=req.params.id
-            const data=await ContactService.ContactById(contactId)
-            console.log("check data",data)
+            const input = req.query;
+            const data = await ContactService.searchContact(input)
+            res.status(200).json({message:"contact created succesfully",data})
+        }
+        catch(e){
+            return next(new(Error(e)))
+        }
+    }
+   
+    static async updatingContact(req,res,next){
+        try{
+            const id=req.params.id
+            // const data=await ContactService.ContactById(id)
+            console.log("check data",id)
             const newContactInfo = req.body
+            console.log("check contact",newContactInfo)
             if (req.body.firstname) newContactInfo.firstname = req.body.firstname
             if (req.body.lastname) newContactInfo.lastname = req.body.lastname    
             if (req.body.email) newContactInfo.gender = req.body.email
             if (req.body.phone) newContactInfo.gender = req.body.phone
-            const dbResponse = await updateUserInfo(newContactInfo, req.user.userId)
+            const dbResponse = await ContactService.updateContact(newContactInfo,id)
             res.status(200).json({message:"update a contact!!",dbResponse})
 
         }
@@ -53,8 +54,12 @@ export default class ContactController{
 
     static async deleteContact(req,res,next){
         try{
-            const {contactId}=req.params.id
-            const data=await ContactService.ContactById(contactId)
+            const id=req.params.id
+            console.log("check idd",id)
+            const data = await ContactService.getContactById(id)
+            if(!data) return res.status(400).json({message:"contact no found"})
+           else
+            await ContactService.deleteContact(id)
             console.log("check data",data)
             res.status(200).json({message:"delete a contact!!"})
         }
