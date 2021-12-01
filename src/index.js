@@ -20,7 +20,7 @@ app.use("/docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 app.use(routes);
 
 // finally, let's start our server...
-const port = process.env.PORT || 7000;
+const port = process.env.PORT || 5000;
 const server = app.listen(port, () => {
     console.log(`Listening on port ${port}`);
   });
