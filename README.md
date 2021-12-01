@@ -63,6 +63,10 @@ Any web browser
 - npm run dev
 ```
 4. Install postman to test all endpoints on port 4000.
+5. deployment link
+```
+- https://contact-b.herokuapp.com/api
+```
 
 ### Test
 
