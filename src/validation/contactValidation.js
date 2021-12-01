@@ -5,8 +5,8 @@ class ContactValidation{
         const Schema=Joi.object({
             lastname:Joi.string().min(3).required(),
             firstname:Joi.string().min(3).required(),
-            email:Joi.string().min(5).email().required(),
-            phone:Joi.number().min(10).required()  
+            email:Joi.array().items(Joi.string().email().required()),
+            phone:Joi.array().items(Joi.number().required())  
            
         })
         const result=Schema.validate(req.body);

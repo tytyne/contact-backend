@@ -14,6 +14,7 @@ export default class ContactController{
     static async PostContact(req,res,next){
         try{
             const formData = req.body;
+            console.log("formadaaaa",formData)
             const data = await ContactService.createContact(formData)
             res.status(200).json({message:"contact created succesfully",data})
         }
@@ -23,7 +24,7 @@ export default class ContactController{
     }
     static async searchContact(req,res,next){
         try{
-            const input = req.query;
+            const input = req.query.input;
             const data = await ContactService.searchContact(input)
             res.status(200).json({message:"contact created succesfully",data})
         }
@@ -31,7 +32,17 @@ export default class ContactController{
             return next(new(Error(e)))
         }
     }
-   
+    static async getContact(req,res,next){
+        try{
+            const id=req.params.id
+            console.log("check idd",id)
+            const data = await ContactService.getContactById(id)
+            res.status(200).json({message:"contact",data})
+        }
+        catch(e){
+            return next(new(Error(e)))
+        }
+    }
     static async updatingContact(req,res,next){
         try{
             const id=req.params.id

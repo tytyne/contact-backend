@@ -21,7 +21,10 @@ export default class ContactService{
             where: {
               [Op.or]: [
                 { firstname:value },
-                { lastname:value }
+                { lastname:value },
+                { email:value },
+                { phone:value }
+               
               ]
             }
           });
